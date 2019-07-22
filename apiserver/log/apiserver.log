@@ -1,0 +1,5 @@
+{"level":"INFO","timestamp":"2019-07-22 18:50:45.996","file":"model/base.go:37","msg":"mysql connection string: root:clmAdm1n@tcp(127.0.0.1:3306)/db_apiserver?charset=utf8\u0026parseTime=true\u0026loc=Local"}
+{"level":"ERROR","timestamp":"2019-07-22 18:50:46.048","file":"model/base.go:54","msg":"Database connection failed. Database name: db_apiserver","data":{"error":"Error 1049: Unknown database 'db_apiserver'"}}
+{"level":"INFO","timestamp":"2019-07-22 18:50:46.049","file":"apiserver/main.go:62","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-07-22 18:50:46.049","file":"apiserver/main.go:58","msg":"Start to listening the incoming requests on https address: :8081"}
+{"level":"INFO","timestamp":"2019-07-22 18:50:46.049","file":"apiserver/main.go:50","msg":"The router has been deployed successfully."}

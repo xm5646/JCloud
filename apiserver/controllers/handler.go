@@ -3,7 +3,7 @@
  * @Date: 2019-04-16
  * @author: lixiaoming
  */
-package handler
+package controllers
 
 import (
 	"apiserver/pkg/errno"

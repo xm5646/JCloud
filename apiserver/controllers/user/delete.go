@@ -6,7 +6,7 @@
 package user
 
 import (
-	"apiserver/handler"
+	"apiserver/controllers"
 	"apiserver/model/user"
 	"apiserver/pkg/errno"
 	"github.com/gin-gonic/gin"
@@ -16,8 +16,8 @@ import (
 func Delete(c *gin.Context) {
 	userId, _ := strconv.Atoi(c.Param("id"))
 	if err := user.DeleteUser(uint64(userId)); err != nil {
-		handler.SendResponse(c, errno.ErrDatabase, nil)
+		controllers.SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}
-	handler.SendResponse(c, nil, nil)
+	controllers.SendResponse(c, nil, nil)
 }

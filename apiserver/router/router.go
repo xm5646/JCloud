@@ -8,8 +8,8 @@ package router
 import (
 	_ "apiserver/docs"
 
-	"apiserver/handler/sd"
-	"apiserver/handler/user"
+	"apiserver/controllers/sd"
+	"apiserver/controllers/user"
 	"apiserver/router/middleware"
 	"github.com/gin-gonic/gin"
 	"github.com/swaggo/gin-swagger"
@@ -29,6 +29,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		c.String(http.StatusNotFound, "The incorrect API route.")
 	})
 
+	// 安装swag命令行工具 go get -u github.com/swaggo/swag/cmd/swag
 	// 加载swagger api 文档
 	// 重新生成文档  swag init
 	// 访问地址/swagger/index.html

@@ -6,7 +6,7 @@
 package middleware
 
 import (
-	"apiserver/handler"
+	"apiserver/controllers"
 	"apiserver/pkg/errno"
 	"bytes"
 	"encoding/json"
@@ -80,7 +80,7 @@ func Logging() gin.HandlerFunc {
 
 		code, message := -1, ""
 
-		var response handler.Response
+		var response controllers.Response
 		if err := json.Unmarshal(blw.body.Bytes(), &response); err != nil {
 			log.Errorf(err, "response body can not unmarshal to model.Response struct, body: `%s`", blw.body.Bytes())
 			code = errno.InternalServerError.Code

@@ -6,7 +6,7 @@
 package user
 
 import (
-	. "apiserver/handler"
+	. "apiserver/controllers"
 	"apiserver/model"
 	"apiserver/model/user"
 	"apiserver/pkg/auth"

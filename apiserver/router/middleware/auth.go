@@ -6,7 +6,7 @@
 package middleware
 
 import (
-	"apiserver/handler"
+	"apiserver/controllers"
 	"apiserver/pkg/errno"
 	"apiserver/pkg/token"
 	"github.com/gin-gonic/gin"
@@ -15,7 +15,7 @@ import (
 func AuthMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		if _, err := token.ParseRequest(c); err != nil {
-			handler.SendResponse(c, errno.ErrTokenInvaild, nil)
+			controllers.SendResponse(c, errno.ErrTokenInvaild, nil)
 			c.Abort()
 			return
 		}
