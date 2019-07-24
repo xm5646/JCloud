@@ -22,11 +22,26 @@ const (
 	GB = 1024 * MB
 )
 
+// @Summary 服务健康检查
+// @Description 服务健康检查
+// @Tags ServiceDiscovery
+// @Accept  json
+// @Produce  json
+// @Success 200 {string} string ""
+// @Router /sd/health [get]
 func HealthCheck(c *gin.Context) {
 	message := "OK"
 	c.String(http.StatusOK, "\n"+message)
 }
 
+
+// @Summary 磁盘空间检查
+// @Description 磁盘空间检查
+// @Tags ServiceDiscovery
+// @Accept  json
+// @Produce  json
+// @Success 200 {string} string ""
+// @Router /sd/disk [get]
 // 磁盘检查
 func DiskCheck(c *gin.Context) {
 	u, _ := disk.Usage("/")
@@ -52,6 +67,13 @@ func DiskCheck(c *gin.Context) {
 	c.String(status, "\n"+message)
 }
 
+// @Summary cpu利用率检查
+// @Description cpu利用率检查
+// @Tags ServiceDiscovery
+// @Accept  json
+// @Produce  json
+// @Success 200 {string} string ""
+// @Router /sd/cpu [get]
 // CPU利用率检查
 func CPUCheck(c *gin.Context) {
 	cores, _ := cpu.Counts(false)
@@ -76,6 +98,13 @@ func CPUCheck(c *gin.Context) {
 	c.String(status, "\n"+messsage)
 }
 
+// @Summary 内存利用率检查
+// @Description 内存利用率检查
+// @Tags ServiceDiscovery
+// @Accept  json
+// @Produce  json
+// @Success 200 {string} string ""
+// @Router /sd/ram [get]
 // 内存利用率检查
 func RAMCheck(c *gin.Context) {
 	u, _ := mem.VirtualMemory()

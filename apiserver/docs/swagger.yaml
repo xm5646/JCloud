@@ -1,17 +1,4 @@
 basePath: '{{.BasePath}}'
-definitions:
-  user.CreateRequest:
-    properties:
-      password:
-        type: string
-      username:
-        type: string
-    type: object
-  user.CreateResponse:
-    properties:
-      username:
-        type: string
-    type: object
 host: '{{.Host}}'
 info:
   contact: {}
@@ -20,30 +7,64 @@ info:
   title: '{{.Title}}'
   version: '{{.Version}}'
 paths:
-  /login:
-    post: {}
-  /user:
-    post:
+  /sd/cpu:
+    get:
       consumes:
       - application/json
-      description: Add a new user
-      parameters:
-      - description: Create a new user
-        in: body
-        name: user
-        required: true
-        schema:
-          $ref: '#/definitions/user.CreateRequest'
-          type: object
+      description: cpu利用率检查
       produces:
       - application/json
       responses:
         "200":
-          description: '{"code":0,"message":"OK","data":{"username":"kong"}}'
+          description: OK
           schema:
-            $ref: '#/definitions/user.CreateResponse'
-            type: object
-      summary: Add new user to the database
+            type: string
+      summary: cpu利用率检查
       tags:
-      - user
+      - ServiceDiscovery
+  /sd/disk:
+    get:
+      consumes:
+      - application/json
+      description: 磁盘空间检查
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 磁盘空间检查
+      tags:
+      - ServiceDiscovery
+  /sd/health:
+    get:
+      consumes:
+      - application/json
+      description: 服务健康检查
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 服务健康检查
+      tags:
+      - ServiceDiscovery
+  /sd/ram:
+    get:
+      consumes:
+      - application/json
+      description: 内存利用率检查
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 内存利用率检查
+      tags:
+      - ServiceDiscovery
 swagger: "2.0"

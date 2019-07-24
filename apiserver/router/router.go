@@ -9,7 +9,6 @@ import (
 	_ "apiserver/docs"
 
 	"apiserver/controllers/sd"
-	"apiserver/controllers/user"
 	"apiserver/router/middleware"
 	"github.com/gin-gonic/gin"
 	"github.com/swaggo/gin-swagger"
@@ -35,21 +34,14 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	// 访问地址/swagger/index.html
 	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
-	g.POST("/login", user.Login)
 
+	// 服务健康检查
 	svcd := g.Group("/sd")
 	{
 		svcd.GET("/health", sd.HealthCheck)
 		svcd.GET("/disk", sd.DiskCheck)
 		svcd.GET("cpu", sd.CPUCheck)
 		svcd.GET("/ram", sd.RAMCheck)
-	}
-
-	u := g.Group("/v1/user")
-	u.Use(middleware.AuthMiddleware())
-	{
-		u.POST("", user.Create)
-		u.DELETE("/:id", user.Delete)
 	}
 
 	return g

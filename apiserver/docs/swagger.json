@@ -10,12 +10,9 @@
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/login": {
-            "post": {}
-        },
-        "/user": {
-            "post": {
-                "description": "Add a new user",
+        "/sd/cpu": {
+            "get": {
+                "description": "cpu利用率检查",
                 "consumes": [
                     "application/json"
                 ],
@@ -23,50 +20,85 @@
                     "application/json"
                 ],
                 "tags": [
-                    "user"
+                    "ServiceDiscovery"
                 ],
-                "summary": "Add new user to the database",
-                "parameters": [
-                    {
-                        "description": "Create a new user",
-                        "name": "user",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/user.CreateRequest"
-                        }
-                    }
-                ],
+                "summary": "cpu利用率检查",
                 "responses": {
                     "200": {
-                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"username\":\"kong\"}}",
+                        "description": "OK",
                         "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/user.CreateResponse"
+                            "type": "string"
                         }
                     }
-                }
-            }
-        }
-    },
-    "definitions": {
-        "user.CreateRequest": {
-            "type": "object",
-            "properties": {
-                "password": {
-                    "type": "string"
-                },
-                "username": {
-                    "type": "string"
                 }
             }
         },
-        "user.CreateResponse": {
-            "type": "object",
-            "properties": {
-                "username": {
-                    "type": "string"
+        "/sd/disk": {
+            "get": {
+                "description": "磁盘空间检查",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "ServiceDiscovery"
+                ],
+                "summary": "磁盘空间检查",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/sd/health": {
+            "get": {
+                "description": "服务健康检查",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "ServiceDiscovery"
+                ],
+                "summary": "服务健康检查",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/sd/ram": {
+            "get": {
+                "description": "内存利用率检查",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "ServiceDiscovery"
+                ],
+                "summary": "内存利用率检查",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
                 }
             }
         }
