@@ -15,7 +15,7 @@ db:
   db_max_idle: 10
   db_max_conn: 100
   dev:
-    name: db_apiserver
+    name: jcloud_1_0
     addr: 127.0.0.1:3306
     username: root
     password: clmAdm1n

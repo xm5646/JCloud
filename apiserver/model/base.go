@@ -89,6 +89,11 @@ func InitProDB() *gorm.DB {
 
 }
 
+func CreateTable() {
+	DB.Instance.Exec("DROP TABLE jc_clusters")
+	DB.Instance.AutoMigrate(ClusterModel{})
+}
+
 func (db *Database) Close() {
 	DB.Instance.Close()
 }

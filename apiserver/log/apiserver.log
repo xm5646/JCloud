@@ -13,3 +13,20 @@
 {"level":"INFO","timestamp":"2019-07-24 19:21:35.135","file":"apiserver/main.go:62","msg":"Start to listening the incoming requests on http address: :8080"}
 {"level":"INFO","timestamp":"2019-07-24 19:21:35.135","file":"apiserver/main.go:58","msg":"Start to listening the incoming requests on https address: :8081"}
 {"level":"INFO","timestamp":"2019-07-24 19:21:35.135","file":"apiserver/main.go:50","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-07-24 20:41:31.823","file":"model/base.go:37","msg":"mysql connection string: root:clmAdm1n@tcp(127.0.0.1:3306)/jcloud_1_0?charset=utf8\u0026parseTime=true\u0026loc=Local"}
+{"level":"INFO","timestamp":"2019-07-24 20:41:31.882","file":"apiserver/main.go:65","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-07-24 20:41:31.882","file":"apiserver/main.go:61","msg":"Start to listening the incoming requests on https address: :8081"}
+{"level":"INFO","timestamp":"2019-07-24 20:41:31.883","file":"apiserver/main.go:53","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-07-24 20:43:07.867","file":"model/base.go:37","msg":"mysql connection string: root:clmAdm1n@tcp(127.0.0.1:3306)/jcloud_1_0?charset=utf8\u0026parseTime=true\u0026loc=Local"}
+{"level":"INFO","timestamp":"2019-07-24 20:43:07.876","file":"apiserver/main.go:65","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-07-24 20:43:07.876","file":"apiserver/main.go:61","msg":"Start to listening the incoming requests on https address: :8081"}
+{"level":"INFO","timestamp":"2019-07-24 20:43:07.877","file":"apiserver/main.go:53","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-07-24 20:44:43.773","file":"model/base.go:37","msg":"mysql connection string: root:clmAdm1n@tcp(127.0.0.1:3306)/jcloud_1_0?charset=utf8\u0026parseTime=true\u0026loc=Local"}
+{"level":"INFO","timestamp":"2019-07-24 20:44:43.831","file":"apiserver/main.go:65","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-07-24 20:44:43.831","file":"apiserver/main.go:61","msg":"Start to listening the incoming requests on https address: :8081"}
+{"level":"INFO","timestamp":"2019-07-24 20:44:43.832","file":"apiserver/main.go:53","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-07-24 20:54:02.639","file":"model/base.go:37","msg":"mysql connection string: root:clmAdm1n@tcp(127.0.0.1:3306)/jcloud_1_0?charset=utf8\u0026parseTime=true\u0026loc=Local"}
+{"level":"INFO","timestamp":"2019-07-24 20:54:02.748","file":"apiserver/main.go:65","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-07-24 20:54:02.748","file":"apiserver/main.go:61","msg":"Start to listening the incoming requests on https address: :8081"}
+{"level":"INFO","timestamp":"2019-07-24 20:54:02.749","file":"apiserver/main.go:53","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-07-24 20:54:18.461","file":"cluster/create.go:26","msg":"Create function called.","data":{"X-Request-Id":"aa2b5e60-c5a7-4e44-87f3-13920ecaa4e4"}}

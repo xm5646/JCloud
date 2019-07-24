@@ -34,7 +34,6 @@ func HealthCheck(c *gin.Context) {
 	c.String(http.StatusOK, "\n"+message)
 }
 
-
 // @Summary 磁盘空间检查
 // @Description 磁盘空间检查
 // @Tags ServiceDiscovery

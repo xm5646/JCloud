@@ -1,4 +1,19 @@
 basePath: '{{.BasePath}}'
+definitions:
+  cluster.CreateRequest:
+    properties:
+      name:
+        type: string
+    type: object
+  controllers.Response:
+    properties:
+      code:
+        type: integer
+      data:
+        type: object
+      message:
+        type: string
+    type: object
 host: '{{.Host}}'
 info:
   contact: {}
@@ -67,4 +82,33 @@ paths:
       summary: 内存利用率检查
       tags:
       - ServiceDiscovery
+  /v1/cluster:
+    post:
+      consumes:
+      - application/json
+      description: 通过k8s master api token 添加集群
+      parameters:
+      - description: 用户登录状态的token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: '{}'
+        in: body
+        name: cluster
+        required: true
+        schema:
+          $ref: '#/definitions/cluster.CreateRequest'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{}'
+          schema:
+            $ref: '#/definitions/controllers.Response'
+            type: object
+      summary: 添加集群
+      tags:
+      - cluster
 swagger: "2.0"

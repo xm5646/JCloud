@@ -6,6 +6,7 @@
 package router
 
 import (
+	"apiserver/controllers/cluster"
 	_ "apiserver/docs"
 
 	"apiserver/controllers/sd"
@@ -34,7 +35,6 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	// 访问地址/swagger/index.html
 	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
-
 	// 服务健康检查
 	svcd := g.Group("/sd")
 	{
@@ -42,6 +42,12 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		svcd.GET("/disk", sd.DiskCheck)
 		svcd.GET("cpu", sd.CPUCheck)
 		svcd.GET("/ram", sd.RAMCheck)
+	}
+
+	// 集群接口
+	clusterGroup := g.Group("/v1/cluster")
+	{
+		clusterGroup.POST("", cluster.Create)
 	}
 
 	return g

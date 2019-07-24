@@ -29,6 +29,9 @@ func main() {
 
 	// 初始化数据库
 	model.DB.Init()
+
+	// 根据model创建表
+	model.CreateTable()
 	defer model.DB.Close()
 
 	// 创建Gin引擎
