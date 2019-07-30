@@ -150,6 +150,12 @@
         "cluster.CreateRequest": {
             "type": "object",
             "properties": {
+                "api_host": {
+                    "type": "string"
+                },
+                "api_token": {
+                    "type": "string"
+                },
                 "name": {
                     "type": "string"
                 }

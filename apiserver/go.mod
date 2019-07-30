@@ -23,4 +23,6 @@ require (
 	github.com/willf/pad v0.0.0-20190207183901-eccfe5d84172
 	golang.org/x/crypto v0.0.0-20190701094942-4def268fd1a4
 	gopkg.in/go-playground/validator.v9 v9.29.1
+	k8s.io/apimachinery v0.0.0-20190612205821-1799e75a0719
+	k8s.io/client-go v12.0.0+incompatible
 )

@@ -46,7 +46,7 @@ type ClusterModel struct {
 	Name         string    `json:"name" gorm:"column:name;not null"`
 	APIProtocol  string    `json:"api_protocol" gorm:"column:api_protocol"`
 	APIHost      string    `json:"api_host" gorm:"column:api_host"`
-	APIToken     string    `json:"api_token" gorm:"column:api_token"`
+	APIToken     string    `json:"api_token" gorm:"column:api_token;type:varchar(2048)"`
 	APIVersion   string    `json:"api_version" gorm:"column:api_version"`
 	Description  string    `json:"description" gorm:"column:description"`
 	CreationTime time.Time `json:"creation_time" gorm:"column:create_time"`
@@ -55,6 +55,12 @@ type ClusterModel struct {
 	Type         int8      `json:"type" gorm:"column:type"`
 }
 
+// 表名
 func (c *ClusterModel) TableName() string {
 	return "jc_clusters"
+}
+
+// 插入集群
+func (c *ClusterModel) Create() error {
+	return DB.Instance.Save(&c).Error
 }
